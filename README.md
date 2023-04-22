@@ -42,22 +42,87 @@ Step 6:Close the Android project.
  ```
 /*
 Program to Develop an application that uses Font Size using Android Studio .
-Developed by: 
-RegisterNumber:  
+Developed by: Yuvadarshini S
+RegisterNumber: 212221230126
 */
 ```
 
 ## MainActivity.java:
+```
+package com.example.myapplication;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+public class MainActivity extends AppCompatActivity {
+    float font = 24;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final TextView t1 = (TextView)findViewById(R.id.textView1);
+        Button b1 = (Button)findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener()    {
+            public void onClick(View view) {
+                t1.setTextSize(font);
+                font = font+4;
+                if(font==40)
+                    font = 20;
+            }
+        });
 
+    }
+}
+```
 ## activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:text="@string/change_font_size"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+
+</RelativeLayout>
+```
 ## Output:
 
+![op1](https://user-images.githubusercontent.com/93482485/233788790-4b7fdb30-b35a-4b8b-96c0-babeafa51852.jpg)
 
+![output3](https://user-images.githubusercontent.com/93482485/233788796-131f658e-718a-43db-b975-9df38571e729.png)
+
+![output2](https://user-images.githubusercontent.com/93482485/233788800-fbc0665e-9607-4f50-b944-2e8ecfe94b12.png)
+
+![output1](https://user-images.githubusercontent.com/93482485/233788802-46a99dac-e51d-424b-bfa4-d01700069333.png)
 
 ## Result:
 Thus, the program for android application, Font Size was executed successfully using Android Studio.
